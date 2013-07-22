@@ -1,60 +1,113 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Free-antivirus : " />
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Free-antivirus by AVTS</title>
+    <title>Free-antivirus</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>Free-antivirus</h1>
-        <h2></h2>
-        <a href="https://github.com/AVTS/Free-AntiVirus" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/AVTS/Free-AntiVirus">View on GitHub</a>
+
+          <h1 id="project_title">Free-antivirus</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/AVTS/Free-AntiVirus/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/AVTS/Free-AntiVirus/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
 <a name="welcome-to-our-free-antivirus-github-page" class="anchor" href="#welcome-to-our-free-antivirus-github-page"><span class="octicon octicon-link"></span></a>Welcome to our free antivirus github page!</h3>
 
-<p>Here you can find more information about this product.</p>
+<p>Here you can find more information about this product, download it, share it with friends and make mini - antivirus.</p>
 
 <blockquote>
 <p>You can visit our website <a href="http://uaavts.p.ht/">here</a>.</p>
+
+<h3>
+<a name="how-to-make-mini---antivirus" class="anchor" href="#how-to-make-mini---antivirus"><span class="octicon octicon-link"></span></a>How to make mini - antivirus</h3>
+
+<p>Hello there! My name is Yura K. and I tell you how to make mini antivirus in Visual Basic</p>
+
+<hr>
+<p><strong>We need:</strong></p>
+
+<hr>
+<p>2 buttons;
+1 richtextbox;
+1 openfiledialog</p>
+
+<hr>
+<p><strong>Step 1</strong></p>
+
+<hr>
+<p>First we need to does 1 left click on button 1 and set its name to Choose Folder.
+Then, we need to does 1 left click on button 2 and set its name to Delete File.</p>
+
+<hr>
+<p><strong>Step 2</strong></p>
+
+<hr>
+<p>First we need to does 1 left click on button 2 and set value <code>enabled</code> to false in object properties.
+Then, we need to does 1 left click on richtextbox1 and set value 'visible' to false in object properties.</p>
+
+<hr>
+<p><strong>Step 3 - coding!</strong></p>
+
+<hr>
+<p>First we need to does 2 left clicks on button 1 and write this code:
+<code>
+OpenFileDialog1.ShowDialog()
+If OpenFileDialog1.SelectedFile = "" Then
+           MsgBox("You does not select file to scan! Please, try again.", MsgBoxStyle.Information)
+Else
+           Dim A1 = new StreamReader(OpenFileDialog1.SelectedFile)
+           RichTextBox1.Text = A1.ReadToEnd()
+           If RichTextBox1.Contains("virus") Then
+                      MsgBox("A Virus was found!")
+                      Button2.Enabled = "True"
+           End If
+           If RichTextBox1.Contains("trojan") Then
+                      MsgBox("A Virus was found!")
+                      Button2.Enabled = "True"
+           End If
+End If
+</code>
+Warning! You need add viruses after <code>RichTextBox1.Text = A1.ReadToEnd()</code> (examples is after it.)
+Then, we need to does 2 left click on button2 and write this code:
+<code>
+My.Computer.FileSystem.DeleteFile(OpenFileDialog1.SelectedFile)
+MsgBox("Virus was deleted. Your computer is now safe. This mini antivirus was built with http://uaavts.p.ht/")
+</code>
+Have fun!</p>
 </blockquote>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/AVTS/Free-AntiVirus/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/AVTS/Free-AntiVirus/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/AVTS/Free-AntiVirus"></a> is maintained by <a href="https://github.com/AVTS">AVTS</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
 
-  
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Free-antivirus maintained by <a href="https://github.com/AVTS">AVTS</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
